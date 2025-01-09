@@ -6,16 +6,16 @@ struct CardView: View {
         VStack (alignment: .leading){
             Text(scrum.title)
                 .font(.headline)
+                .accessibilityAddTraits(.isHeader)
             Spacer()
             HStack {
                 Label("\(scrum.attendees.count)", systemImage: "person.3")
-                    .accessibilityLabel("Count person")
-                    .accessibilityValue("\(scrum.attendees.count)")
+                    .accessibilityValue("\(scrum.attendees.count) attendees")
                 Spacer()
                 Label("\(scrum.lenghtInMinutes)", systemImage: "clock")
+                    .accessibilityValue("\(scrum.lenghtInMinutes) minute meeting")
                     .labelStyle(.trailingIcon)
-                    .accessibilityLabel("Time")
-                    .accessibilityValue("\(scrum.lenghtInMinutes)")
+                    
             }
             .font(.caption)
         }
